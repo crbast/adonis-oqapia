@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/CrBast/adonis-oqapia#readme",
   "devDependencies": {
-    "japa": "^3.0.1"
+    "japa": "^3.0.1",
+    "@adonisjs/fold": "^4.0.9"
   }
 }

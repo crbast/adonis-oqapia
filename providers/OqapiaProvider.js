@@ -16,7 +16,7 @@ class OqapiaProvider extends ServiceProvider {
      */
     _registerAFLUMiddleware() {
         this.app.bind('Oqapia/Middleware/AutoFillLangUrl', () => {
-            const Aflu = require('../scr/Middleware/AutoFillLang')
+            const Aflu = require('../src/Middleware/AutoFillLangUrl')
             return new Aflu
         })
     }
@@ -26,7 +26,7 @@ class OqapiaProvider extends ServiceProvider {
      */
     _registerLanguageSelectionMiddleware() {
         this.app.bind('Oqapia/Middleware/LanguageSelection', () => {
-            const Ls = require('../scr/Middleware/LanguageSelection')
+            const Ls = require('../src/Middleware/LanguageSelection')
             return new Ls
         })
     }

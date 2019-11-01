@@ -1,6 +1,14 @@
 # In progress
 
+# Prerequisites
+
+Make sure to have `@adonisjs/antl` installed:
+```bash
+> adonis install @adonisjs/antl
+```
+
 # Installation
+
 With `@adonis/cli` :
 ```bash
 > adonis install @neptium/adonis-oqapia
