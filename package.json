@@ -1,0 +1,22 @@
+{
+  "name": "adonis-oqapia",
+  "version": "0.0.1",
+  "description": "Adonis Dynamic Localization Urls provider",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CrBast/adonis-oqapia.git"
+  },
+  "author": "Bastien Crettenand",
+  "license": "https://github.com/CrBast/adonis-oqapia/blob/master/LICENSE",
+  "bugs": {
+    "url": "https://github.com/CrBast/adonis-oqapia/issues"
+  },
+  "homepage": "https://github.com/CrBast/adonis-oqapia#readme",
+  "devDependencies": {
+    "japa": "^3.0.1"
+  }
+}
