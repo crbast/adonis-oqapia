@@ -30,3 +30,5 @@ const namedMiddleware = [
     langSelection: 'Oqapia/Middleware/LanguageSelection'
 ]
 ```
+
+## Configuration
