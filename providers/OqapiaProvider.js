@@ -5,7 +5,7 @@
  *
 */
 
-const { ServiceProvider } = require('D:\\Temp\\test_npm_adonis\\app\\node_modules\\@adonisjs\\fold')
+const { ServiceProvider } = require('@adonisjs/fold')
 
 class OqapiaProvider extends ServiceProvider {
 
