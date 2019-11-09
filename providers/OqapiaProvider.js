@@ -5,7 +5,7 @@
  *
 */
 
-const { ServiceProvider } = require('@adonisjs/fold')
+const { ServiceProvider } = require('D:\\Temp\\test_npm_adonis\\app\\node_modules\\@adonisjs\\fold')
 
 class OqapiaProvider extends ServiceProvider {
 
@@ -22,12 +22,24 @@ class OqapiaProvider extends ServiceProvider {
     }
 
     /**
+     * Register Exceptions
+     * - 
+     */
+    _registerExceptions() {
+        this.app.bind('Oqapia/Exceptions/RouteNotFoundException', () => {
+            const RouteNotFoundException = require('../src/Exceptions/RouteNotFoundException')
+            return RouteNotFoundException
+        })
+    }
+
+    /**
      * Register namespaces to the IoC container
      * 
      * @method register
      */
     register() {
         this._registerTranslatoriddleware()
+        this._registerExceptions()
     }
 
     async boot() { }

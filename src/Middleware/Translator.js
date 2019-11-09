@@ -3,6 +3,8 @@
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
+const RouteNotFoundException = use('Oqapia/Exceptions/RouteNotFoundException')
+
 class Translator {
   /**
    * @param {object} ctx
@@ -31,7 +33,7 @@ class Translator {
         var lang = params.lang
         if (lang != undefined) {
           if (!locales.includes(lang)) {
-            return response.status(404).send(view.render('404'))
+            throw new RouteNotFoundException(request.url())
           }
           session.put('lang', lang)
           antl.switchLocale(lang)
