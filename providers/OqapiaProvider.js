@@ -10,24 +10,14 @@ const { ServiceProvider } = require('@adonisjs/fold')
 class OqapiaProvider extends ServiceProvider {
 
     /**
-     * Register AutoFillLangUrl middleware
+     * Register Translator middleware
      * 
-     * @method _registerAFLUMiddleware
+     * @method _registerTranslatoriddleware
      */
-    _registerAFLUMiddleware() {
-        this.app.bind('Oqapia/Middleware/AutoFillLangUrl', () => {
-            const Aflu = require('../src/Middleware/AutoFillLangUrl')
-            return new Aflu
-        })
-    }
-
-    /**
-     * Register LanguageSelection middleware
-     */
-    _registerLanguageSelectionMiddleware() {
-        this.app.bind('Oqapia/Middleware/LanguageSelection', () => {
-            const Ls = require('../src/Middleware/LanguageSelection')
-            return new Ls
+    _registerTranslatoriddleware() {
+        this.app.bind('Oqapia/Middleware/Translator', () => {
+            const trans = require('../src/Middleware/Translator')
+            return new trans
         })
     }
 
@@ -37,8 +27,7 @@ class OqapiaProvider extends ServiceProvider {
      * @method register
      */
     register() {
-        this._registerAFLUMiddleware()
-        this._registerLanguageSelectionMiddleware()
+        this._registerTranslatoriddleware()
     }
 
     async boot() { }

@@ -3,14 +3,20 @@
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
-class LanguageSelection {
+class Translator {
   /**
    * @param {object} ctx
    * @param {Request} ctx.request
    * @param {Function} next
+   * @param {Response} ctx.response
    */
-  async handle({ response, antl, params, view, session }, next, properties) {
+  async handle({ response, antl, params, view, session, request }, next, properties) {
+    if (params.lang == undefined) {
+      return response.redirect(`${antl.currentLocale()}${request.url()}`)
+    }
+
     const locales = antl.availableLocales()
+
     switch (properties) {
       case 'session':
         if (session.get('lang') != undefined) {
@@ -45,4 +51,4 @@ class LanguageSelection {
   }
 }
 
-module.exports = LanguageSelection
+module.exports = Translator

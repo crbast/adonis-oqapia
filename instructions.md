@@ -26,8 +26,7 @@ const providers = [
 2. Add Oqapia Middleware: (`start/kernel.js`)
 ```js
 const namedMiddleware = [
-    autoFill: 'Oqapia/Middleware/AutoFillLangUrl',
-    langSelection: 'Oqapia/Middleware/LanguageSelection'
+    translator: 'Oqapia/Middleware/Translator'
 ]
 ```
 
