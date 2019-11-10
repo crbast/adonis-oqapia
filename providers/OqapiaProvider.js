@@ -26,9 +26,9 @@ class OqapiaProvider extends ServiceProvider {
      * - 
      */
     _registerExceptions() {
-        this.app.bind('Oqapia/Exceptions/RouteNotFoundException', () => {
-            const RouteNotFoundException = require('../src/Exceptions/RouteNotFoundException')
-            return RouteNotFoundException
+        this.app.bind('Oqapia/Exceptions/CannotResolveUrlException', () => {
+            const CannotResolveUrlException = require('../src/Exceptions/CannotResolveUrlException')
+            return CannotResolveUrlException
         })
     }
 

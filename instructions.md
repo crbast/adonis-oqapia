@@ -30,4 +30,20 @@ const namedMiddleware = [
 ]
 ```
 
+3. [Handling exceptions](https://adonisjs.com/docs/4.1/exceptions#sponsor)
+   
+Exeptions code:
+- `OQAPIA_CANNOT_RESOLVE_URL` : (Example: 404 page)
+
+Example:
+```js
+async handle(error, { view }) {
+    if (error.code === 'OQAPIA_CANNOT_RESOLVE_URL') {
+      view.render('404')
+      return
+    }
+    return super.handle(...arguments)
+}
+```
+
 ## Configuration

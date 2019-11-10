@@ -3,7 +3,7 @@
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
-const RouteNotFoundException = use('Oqapia/Exceptions/RouteNotFoundException')
+const CannotResolveUrlException = use('Oqapia/Exceptions/CannotResolveUrlException')
 
 class Translator {
   /**
@@ -12,7 +12,7 @@ class Translator {
    * @param {Function} next
    * @param {Response} ctx.response
    */
-  async handle({ response, antl, params, view, session, request }, next, properties) {
+  async handle({ response, antl, params, session, request }, next, properties) {
     if (params.lang == undefined) {
       return response.redirect(`${antl.currentLocale()}${request.url()}`)
     }
@@ -33,7 +33,7 @@ class Translator {
         var lang = params.lang
         if (lang != undefined) {
           if (!locales.includes(lang)) {
-            throw new RouteNotFoundException(request.url())
+            throw CannotResolveUrlException.invoke(request)
           }
           session.put('lang', lang)
           antl.switchLocale(lang)
