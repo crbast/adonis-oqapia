@@ -2,9 +2,12 @@
   "name": "adonis-oqapia",
   "version": "0.0.1",
   "description": "Adonis Dynamic Localization Urls provider",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "prepublish": "npm run build",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -17,7 +20,8 @@
   },
   "homepage": "https://github.com/CrBast/adonis-oqapia#readme",
   "devDependencies": {
+    "@adonisjs/fold": "^4.0.9",
     "japa": "^3.0.1",
-    "@adonisjs/fold": "^4.0.9"
+    "typescript": "^3.7.4"
   }
 }
